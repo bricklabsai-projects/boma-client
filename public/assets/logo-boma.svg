@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 400" role="img" aria-label="Boma">
+  <rect width="1600" height="400" fill="#244C93"/>
+  <g fill="#FFFFFF">
+    <path d="M210 90v220c0 5 0 10 1 15 7 83 79 150 165 150 92 0 167-75 167-167s-75-167-167-167c-46 0-87 19-117 50V90h-49z"/>
+    <path d="M950 180c-92 0-167 75-167 167v178h62V347c0-58 47-105 105-105s105 47 105 105v178h62V347c0-92-75-167-167-167z"/>
+    <path d="M1290 180c-92 0-167 75-167 167v178h62V347c0-58 47-105 105-105s105 47 105 105v178h62V347c0-92-75-167-167-167z"/>
+    <path d="M1530 180v360h62V180h-62z"/>
+  </g>
+  <g>
+    <circle cx="640" cy="200" r="42" fill="#B6CDE6"/>
+    <circle cx="700" cy="140" r="38" fill="#B6CDE6"/>
+    <circle cx="760" cy="190" r="28" fill="#FFFFFF"/>
+    <circle cx="700" cy="260" r="50" fill="#E9A861"/>
+    <circle cx="760" cy="270" r="40" fill="#B6CDE6"/>
+    <circle cx="820" cy="240" r="24" fill="#E9A861"/>
+    <circle cx="820" cy="160" r="46" fill="#E9A861"/>
+    <circle cx="600" cy="260" r="24" fill="#FFFFFF"/>
+    <circle cx="610" cy="320" r="18" fill="#FFFFFF"/>
+    <circle cx="680" cy="320" r="18" fill="#FFFFFF"/>
+    <circle cx="750" cy="330" r="22" fill="#B6CDE6"/>
+    <circle cx="830" cy="300" r="18" fill="#FFFFFF"/>
+    <circle cx="840" cy="200" r="16" fill="#FFFFFF"/>
+    <circle cx="640" cy="140" r="16" fill="#FFFFFF"/>
+    <circle cx="670" cy="100" r="14" fill="#FFFFFF"/>
+    <circle cx="750" cy="110" r="20" fill="#B6CDE6"/>
+    <circle cx="790" cy="150" r="18" fill="#B6CDE6"/>
+    <circle cx="780" cy="100" r="14" fill="#FFFFFF"/>
+    <circle cx="700" cy="210" r="22" fill="#FFFFFF"/>
+    <circle cx="760" cy="230" r="16" fill="#B6CDE6"/>
+  </g>
+</svg>

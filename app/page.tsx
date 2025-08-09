@@ -1,33 +1,54 @@
+"use client"
+
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Heart, Users, Shield, Sparkles, Download, Star, Play, CheckCircle, ArrowRight, Smartphone, Globe, Lock } from 'lucide-react';
+import {
+  Heart, Users, Shield, Sparkles, Download, Star, Play,
+  CheckCircle, Smartphone, Globe, Lock, Activity, BarChart2, Layers
+} from 'lucide-react';
+import BrandNavbar from '../components/BrandNavbar';
+import FAQSection from '../components/FAQSection';
+
+// ...existing code (testimonials, stats moved below)...
 
 export default function Home() {
   const features = [
     {
       icon: Heart,
-      title: "Professional Therapy",
-      description: "Connect with licensed therapists who understand your unique needs and provide personalized care.",
-      color: "text-pink-500"
+      title: "Licensed Therapy",
+      blurb: "Sessions with vetted professionals. Matched by specialty & availability.",
+      detail: "Evidence‑based modalities (CBT, ACT, trauma‑informed approaches) delivered with flexible scheduling."
     },
     {
       icon: Users,
-      title: "Rafiki Support",
-      description: "Connect with trained peer supporters who've walked similar paths and can offer understanding.",
-      color: "text-blue-500"
+      title: "Peer (Rafiki) Support",
+      blurb: "Trained peers who ‘get it’.",
+      detail: "Structured peer frameworks: active listening, escalation paths, boundaries and burnout safeguards."
     },
     {
       icon: Shield,
-      title: "Safe Communities",
-      description: "Join supportive communities where you can share experiences and find belonging.",
-      color: "text-green-500"
+      title: "Privacy & Safety",
+      blurb: "Protected spaces you control.",
+      detail: "Role‑based access, encrypted transit, compartmentalized storage, human + automated moderation signals."
+    },
+    {
+      icon: Layers,
+      title: "Communities",
+      blurb: "Focused topical groups.",
+      detail: "Smaller interest & condition cohorts foster relevance and reduce feed fatigue."
+    },
+    {
+      icon: Activity,
+      title: "Progress Tracking",
+      blurb: "Momentum you can see.",
+      detail: "Mood trends, adherence streaks, micro‑wins surfaced—opt‑in analytics only."
     },
     {
       icon: Sparkles,
-      title: "Daily Inspiration",
-      description: "Access daily inspirations and wellness content through our Craddle feature.",
-      color: "text-purple-500"
+      title: "Daily Momentum",
+      blurb: "Small nudges, zero fluff.",
+      detail: "Grounding prompts, reflection cues, and micro‑practices—context‑aware, adaptive to your usage cadence."
     }
   ];
 
@@ -60,44 +81,25 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-green-50 to-teal-50">
-      {/* Header */}
-      <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <Heart className="h-8 w-8 text-teal-600" />
-              <span className="text-2xl font-bold text-gray-900">Boma</span>
-            </div>
-            <div className="hidden md:flex items-center space-x-6">
-              <a href="#features" className="text-gray-600 hover:text-teal-600 transition-colors">Features</a>
-              <a href="#testimonials" className="text-gray-600 hover:text-teal-600 transition-colors">Reviews</a>
-              <a href="#download" className="text-gray-600 hover:text-teal-600 transition-colors">Download</a>
-              <Button variant="outline" className="hover:bg-teal-50">
-                Sign In
-              </Button>
-            </div>
-          </div>
-        </div>
-      </header>
+    <div className="min-h-screen bg-gradient-to-br from-[#244C93]/6 via-[#244C93]/3 to-[#E27A28]/10">
+      <BrandNavbar />
 
-      {/* Hero Section */}
+      {/* Hero Section (minor accent swap to brand blue/orange) */}
       <section className="container mx-auto px-4 py-20 text-center">
         <div className="max-w-4xl mx-auto">
           <div className="mb-6">
-            <span className="inline-flex items-center px-4 py-2 bg-teal-100 text-teal-700 rounded-full text-sm font-medium mb-4">
-              <Sparkles className="h-4 w-4 mr-2" />
+            <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium mb-4 bg-[#244C93]/10 text-[#244C93]">
+              <Sparkles className="h-4 w-4 mr-2 text-[#E27A28]" />
               Now Available on iOS & Android
             </span>
           </div>
-          <h1 className="text-6xl font-bold text-gray-900 mb-6 leading-tight">
-            Your Mental Health Journey
-            <span className="block text-teal-600">Starts Here</span>
+          <h1 className="text-5xl sm:text-6xl font-semibold text-gray-900 mb-6 leading-tight">
+            Practical mental health support
+            <span className="block text-teal-600">that fits real life</span>
           </h1>
-          <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-3xl mx-auto">
-            Boma connects you with professional therapists, peer supporters (Rafikis), 
-            and supportive communities to help you thrive on your mental health journey. 
-            Download our app and start your healing today.
+          <p className="text-lg sm:text-xl text-gray-700 mb-8 leading-relaxed max-w-3xl mx-auto">
+            Access licensed therapists, trained peers, and focused communities in one streamlined experience.
+            Progress tools, not noise. Start where you are—build momentum week by week.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button size="lg" className="bg-teal-600 hover:bg-teal-700 text-white px-8 py-4 text-lg">
@@ -130,91 +132,135 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats Section */}
+      {/* Stats Section (swap accent color) */}
       <section className="bg-white py-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-4xl font-bold text-teal-600 mb-2">{stat.number}</div>
-                <div className="text-gray-600">{stat.label}</div>
+                <div className="text-4xl font-bold text-[#244C93] mb-2">{stat.number}</div>
+                <div className="text-slate-600">{stat.label}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section id="features" className="container mx-auto px-4 py-20">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Comprehensive Mental Health Support
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Everything you need for your mental wellness journey, right in your pocket
-          </p>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-          {features.map((feature, index) => {
-            const Icon = feature.icon;
-            return (
-              <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white">
-                <CardHeader className="text-center pb-4">
-                  <Icon className={`h-12 w-12 ${feature.color} mx-auto mb-4`} />
-                  <CardTitle className="text-xl text-gray-900">{feature.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-center text-gray-600 leading-relaxed">
-                    {feature.description}
+      {/* Improved Comprehensive Support / Features Section */}
+      <section id="features" className="relative">
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-white via-[#244C93]/5 to-white" />
+        <div className="container mx-auto px-4 py-24">
+          <div className="mx-auto mb-14 max-w-3xl text-center">
+            <h2 className="text-4xl font-bold tracking-tight text-[#244C93]">
+              Comprehensive Mental Health Support
+            </h2>
+            <p className="mt-4 text-lg text-slate-700">
+              A layered support model: professional guidance, peer relatability, structured communities, and data you own.
+            </p>
+          </div>
+
+            {/* Intro + Key Value Card */}
+          <div className="mb-14 grid gap-10 lg:grid-cols-3">
+            <Card className="lg:col-span-1 border-[#244C93]/15 shadow-sm bg-white/90 backdrop-blur">
+              <CardHeader>
+                <CardTitle className="text-xl text-[#244C93] flex items-center gap-2">
+                  <BarChart2 className="h-5 w-5 text-[#E27A28]" />
+                  Why this model works
+                </CardTitle>
+                <CardDescription className="text-slate-600">
+                  Single‑channel approaches underperform. Boma stitches structured professional care with organic peer momentum and measurable micro‑progression.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="text-sm leading-relaxed text-slate-600 space-y-3">
+                <p><span className="font-medium text-[#244C93]">Retention:</span> Layered interaction types reduce drop‑off after week 3.</p>
+                <p><span className="font-medium text-[#244C93]">Signal:</span> Progress telemetry highlights when to escalate support.</p>
+                <p><span className="font-medium text-[#244C93]">Boundaries:</span> Role distinction prevents emotional overload.</p>
+              </CardContent>
+            </Card>
+
+            <div className="lg:col-span-2 grid gap-6 sm:grid-cols-2">
+              {features.slice(0,4).map(f => {
+                const Icon = f.icon;
+                return (
+                  <Card key={f.title} className="group border border-[#244C93]/10 shadow-sm hover:shadow-md transition bg-white/95">
+                    <CardHeader className="pb-3">
+                      <div className="flex items-start gap-3">
+                        <div className="relative">
+                          <div className="h-11 w-11 rounded-xl bg-gradient-to-br from-[#244C93] to-[#1d3d78] flex items-center justify-center">
+                            <Icon className="h-5 w-5 text-white" />
+                          </div>
+                          <span className="absolute -bottom-1 -right-1 h-4 w-4 rounded-full bg-[#E27A28] ring-2 ring-white" />
+                        </div>
+                        <div>
+                          <CardTitle className="text-base font-semibold text-[#244C93]">
+                            {f.title}
+                          </CardTitle>
+                          <p className="text-xs uppercase tracking-wide text-[#E27A28] font-medium mt-0.5">
+                            {f.blurb}
+                          </p>
+                        </div>
+                      </div>
+                    </CardHeader>
+                    <CardContent className="text-sm text-slate-600 leading-relaxed">
+                      {f.detail}
+                    </CardContent>
+                  </Card>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Secondary Feature Grid */}
+          <div className="grid gap-6 md:grid-cols-3">
+            {features.slice(4).map(f => {
+              const Icon = f.icon;
+              return (
+                <Card key={f.title} className="border border-[#244C93]/10 bg-white/90 hover:border-[#244C93]/30 transition">
+                  <CardHeader className="pb-2">
+                    <div className="flex items-center gap-3">
+                      <div className="h-9 w-9 rounded-lg bg-[#E27A28]/90 flex items-center justify-center">
+                        <Icon className="h-5 w-5 text-white" />
+                      </div>
+                      <CardTitle className="text-base font-semibold text-[#244C93]">
+                        {f.title}
+                      </CardTitle>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="text-sm text-slate-600 leading-relaxed">
+                    <p className="font-medium text-slate-700">{f.blurb}</p>
+                    <p className="mt-2">{f.detail}</p>
+                  </CardContent>
+                </Card>
+              );
+            })}
+            <Card className="relative overflow-hidden border-0 shadow-lg md:col-span-3 bg-gradient-to-r from-[#244C93] via-[#1d3d78] to-[#244C93]">
+              <>
+                <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_30%_40%,#E27A28_0%,transparent_60%)]" />
+                <CardHeader>
+                  <CardTitle className="text-white flex items-center gap-2">
+                    Layered support, owned progress
+                  </CardTitle>
+                  <CardDescription className="text-slate-200">
+                    You control what’s shared. Data portability is built‑in; exports don’t require a support ticket.
                   </CardDescription>
+                </CardHeader>
+                <CardContent className="text-sm text-slate-100 flex flex-wrap gap-x-6 gap-y-3">
+                  {['Role clarity', 'Escalation signals', 'Adaptive prompts', 'Opt‑in metrics', 'Structured privacy', 'Open export'].map(tag => (
+                    <span key={tag} className="rounded-full bg-white/10 px-3 py-1 text-xs tracking-wide uppercase">
+                      {tag}
+                    </span>
+                  ))}
                 </CardContent>
-              </Card>
-            );
-          })}
-        </div>
-
-        {/* Additional Features */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <Card className="border-0 shadow-lg bg-gradient-to-br from-blue-50 to-teal-50">
-            <CardHeader>
-              <Smartphone className="h-8 w-8 text-blue-600 mb-2" />
-              <CardTitle className="text-gray-900">Mobile First</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <CardDescription className="text-gray-600">
-                Designed specifically for mobile use with intuitive touch interfaces and offline capabilities.
-              </CardDescription>
-            </CardContent>
-          </Card>
-
-          <Card className="border-0 shadow-lg bg-gradient-to-br from-green-50 to-emerald-50">
-            <CardHeader>
-              <Lock className="h-8 w-8 text-green-600 mb-2" />
-              <CardTitle className="text-gray-900">Privacy First</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <CardDescription className="text-gray-600">
-                End-to-end encryption and HIPAA compliance ensure your conversations remain private and secure.
-              </CardDescription>
-            </CardContent>
-          </Card>
-
-          <Card className="border-0 shadow-lg bg-gradient-to-br from-purple-50 to-pink-50">
-            <CardHeader>
-              <Globe className="h-8 w-8 text-purple-600 mb-2" />
-              <CardTitle className="text-gray-900">24/7 Support</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <CardDescription className="text-gray-600">
-                Access support anytime, anywhere with our global network of therapists and peer supporters.
-              </CardDescription>
-            </CardContent>
-          </Card>
+              </>
+            </Card>
+          </div>
         </div>
       </section>
 
-      {/* How It Works */}
+      {/* Additional Features (previous cards unified to brand palette) */}
+      {/* ...removed old gradient blocks; optional if still needed keep above section instead... */}
+
+      {/* How It Works (color tweaks) */}
       <section className="bg-white py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -224,24 +270,24 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl font-bold text-teal-600">1</span>
+              <div className="w-16 h-16 bg-[#244C93]/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-2xl font-bold text-[#244C93]">1</span>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Download & Sign Up</h3>
               <p className="text-gray-600">Create your account and complete a brief assessment to help us understand your needs.</p>
             </div>
             
             <div className="text-center">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl font-bold text-blue-600">2</span>
+              <div className="w-16 h-16 bg-[#244C93]/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-2xl font-bold text-[#244C93]">2</span>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Get Matched</h3>
               <p className="text-gray-600">We'll connect you with the right therapist, Rafiki, or community based on your preferences.</p>
             </div>
             
             <div className="text-center">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl font-bold text-green-600">3</span>
+              <div className="w-16 h-16 bg-[#244C93]/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-2xl font-bold text-[#244C93]">3</span>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Start Healing</h3>
               <p className="text-gray-600">Begin your journey with personalized support, community connection, and daily inspiration.</p>
@@ -250,7 +296,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Testimonials (accent color adjust) */}
       <section id="testimonials" className="container mx-auto px-4 py-20">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">What Our Users Say</h2>
@@ -277,8 +323,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Download CTA */}
-      <section id="download" className="bg-gradient-to-r from-teal-600 to-blue-600 text-white py-20">
+      {/* Download CTA (brand gradient) */}
+      <section id="download" className="bg-gradient-to-r from-[#244C93] to-[#1d3d78] text-white py-20">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-4">Ready to Start Your Journey?</h2>
           <p className="text-xl mb-8 text-teal-100 max-w-2xl mx-auto">
@@ -287,11 +333,11 @@ export default function Home() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <Button size="lg" variant="secondary" className="bg-white text-teal-600 hover:bg-gray-100 px-8 py-4 text-lg">
+            <Button size="lg" variant="secondary" className="bg-white text-[#244C93] hover:bg-gray-100 px-8 py-4 text-lg">
               <Download className="h-5 w-5 mr-2" />
               Download for iOS
             </Button>
-            <Button size="lg" variant="secondary" className="bg-white text-teal-600 hover:bg-gray-100 px-8 py-4 text-lg">
+            <Button size="lg" variant="secondary" className="bg-white text-[#244C93] hover:bg-gray-100 px-8 py-4 text-lg">
               <Download className="h-5 w-5 mr-2" />
               Download for Android
             </Button>
@@ -314,7 +360,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
+      <FAQSection />
+
+      {/* Footer (swap teal accents to brand blue/orange) */}
       <footer className="bg-gray-900 text-white py-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
