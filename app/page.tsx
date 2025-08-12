@@ -5,134 +5,150 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import {
   Heart, Users, Shield, Sparkles, Download, Star, Play,
-  CheckCircle, Smartphone, Globe, Lock, Activity, BarChart2, Layers
+  CheckCircle, Layers, Activity
 } from 'lucide-react';
 import BrandNavbar from '../components/BrandNavbar';
 import FAQSection from '../components/FAQSection';
 
-// ...existing code (testimonials, stats moved below)...
-
 export default function Home() {
+  // Stats from content.txt
+  const stats = [
+    { number: "50K+", label: "People reached" },
+    { number: "100+", label: "Licensed Therapists" },
+    { number: "100+", label: "Peer Supporters (Rafikis)" },
+    { number: "10M", label: "Targeted across Africa" }
+  ];
+
+  // Features from content.txt
   const features = [
     {
       icon: Heart,
-      title: "Licensed Therapy",
-      blurb: "Sessions with vetted professionals. Matched by specialty & availability.",
-      detail: "Evidence‑based modalities (CBT, ACT, trauma‑informed approaches) delivered with flexible scheduling."
+      title: "Professional Therapy",
+      blurb: "Book affordable sessions with licensed therapists.",
+      detail: "Access specialists in CBT, trauma, grief, and more. Quality mental health care tailored to your needs."
     },
     {
       icon: Users,
-      title: "Peer (Rafiki) Support",
-      blurb: "Trained peers who ‘get it’.",
-      detail: "Structured peer frameworks: active listening, escalation paths, boundaries and burnout safeguards."
-    },
-    {
-      icon: Shield,
-      title: "Privacy & Safety",
-      blurb: "Protected spaces you control.",
-      detail: "Role‑based access, encrypted transit, compartmentalized storage, human + automated moderation signals."
+      title: "Rafiki Peer Support",
+      blurb: "Chat with trained peers who understand your journey.",
+      detail: "Rafikis offer a listening ear, share lived experience, and connect you to the right resources."
     },
     {
       icon: Layers,
-      title: "Communities",
-      blurb: "Focused topical groups.",
-      detail: "Smaller interest & condition cohorts foster relevance and reduce feed fatigue."
-    },
-    {
-      icon: Activity,
-      title: "Progress Tracking",
-      blurb: "Momentum you can see.",
-      detail: "Mood trends, adherence streaks, micro‑wins surfaced—opt‑in analytics only."
+      title: "Boma Support Groups",
+      blurb: "Safe, peer-led spaces for connection and growth.",
+      detail: "Join judgment-free groups guided by mental health champions. Share, learn, and build resilience together."
     },
     {
       icon: Sparkles,
-      title: "Daily Momentum",
-      blurb: "Small nudges, zero fluff.",
-      detail: "Grounding prompts, reflection cues, and micro‑practices—context‑aware, adaptive to your usage cadence."
+      title: "Cradle Media Center",
+      blurb: "Podcasts, videos, articles, and art for healing.",
+      detail: "A rich library to inspire, educate, and support your journey—curated for young people."
+    },
+    {
+      icon: Activity,
+      title: "Wellness Tools",
+      blurb: "Track your mood and progress over time.",
+      detail: "Self-assessments and optional analytics put your mental wellness journey in your hands."
     }
   ];
 
+  // Why Boma bullets
+  const whyBoma = [
+    {
+      title: "Layered Care Model",
+      desc: "The perfect blend of professional expertise and peer support you can relate to."
+    },
+    {
+      title: "Anonymity & Safety",
+      desc: "Share openly and get help without revealing your identity."
+    },
+    {
+      title: "Always Accessible",
+      desc: "Digital-first design means support is with you anytime, anywhere."
+    },
+    {
+      title: "Affordable Support",
+      desc: "Free access to most features; therapy sessions are paid but kept affordable."
+    }
+  ];
+
+  // How it works steps
+  const howItWorks = [
+    {
+      step: "1",
+      title: "Download & Sign Up",
+      desc: "Create your profile and complete a brief wellness assessment."
+    },
+    {
+      step: "2",
+      title: "Get Matched",
+      desc: "Connect with the right therapist, Rafiki, or community."
+    },
+    {
+      step: "3",
+      title: "Start Healing",
+      desc: "Access resources, join conversations, and track your progress."
+    }
+  ];
+
+  // Testimonials from content.txt
   const testimonials = [
     {
-      name: "Sarah M.",
-      role: "Boma User",
-      content: "Boma changed my life. The therapists are amazing and the community support is incredible.",
+      name: "Rafiki",
+      role: "Peer Supporter",
+      content: "I have removed a lot of stigma around mental health by the fact that I have information on it. I know that me having mental health issues, does not make me any less of a person, does not make me any less deserving. I feel like everyone who gets knowledge of mental health, knows how to embrace themselves and I think that is a powerful thing to do.",
       rating: 5
     },
     {
-      name: "Michael K.",
-      role: "Rafiki Supporter",
-      content: "Being a Rafiki has been so rewarding. Helping others while continuing my own healing journey.",
+      name: "Griffin",
+      role: "Rafiki",
+      content: "I found a safe space and community in Nakujali and this has helped me improve my resilience. Today, I am not ashamed to share my story; I use it to raise awareness and help destigmatize suicide and mental health. I support 20 youths in my group and look forward to increasing my reach to thousands of others in my community.",
       rating: 5
     },
     {
-      name: "Emma D.",
-      role: "Community Member",
-      content: "I found my tribe in the anxiety support community. No longer feel alone in my struggles.",
+      name: "Austin",
+      role: "Therapy Client",
+      content: "When I first heard about therapy, I assumed it was only for people with psychological issues. I never imagined it was something I needed, believing I had everything under control—or so I thought. Wow, was I wrong! I didn't realize how much I needed therapy until I reached out to Mental 360 and had my first session. Over the months, I've discovered so much about myself, my thought processes, and habits I wasn't even aware of. It's been an incredible journey, opening doors to self-reflection and growth. I truly believe I'm becoming a better man because of this decision. Now, I'm a strong advocate for therapy and grateful I took that first step. Thank you, Mental 360, for being with me on this journey!",
       rating: 5
     }
-  ];
-
-  const stats = [
-    { number: "50K+", label: "Active Users" },
-    { number: "500+", label: "Licensed Therapists" },
-    { number: "1000+", label: "Peer Supporters" },
-    { number: "4.9", label: "App Store Rating" }
   ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#244C93]/6 via-[#244C93]/3 to-[#E27A28]/10">
       <BrandNavbar />
 
-      {/* Hero Section (minor accent swap to brand blue/orange) */}
+      {/* Hero Section */}
       <section className="container mx-auto px-4 py-20 text-center">
         <div className="max-w-4xl mx-auto">
           <div className="mb-6">
             <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium mb-4 bg-[#244C93]/10 text-[#244C93]">
               <Sparkles className="h-4 w-4 mr-2 text-[#E27A28]" />
-              Now Available on iOS & Android
+              Award-winning · Facebook Accelerator
             </span>
           </div>
           <h1 className="text-5xl sm:text-6xl font-semibold text-gray-900 mb-6 leading-tight">
-            Practical mental health support
-            <span className="block text-teal-600">that fits real life</span>
+            Your safe, digital sanctuary for mental health
+            <span className="block text-[#244C93]">where professional care meets community connection</span>
           </h1>
           <p className="text-lg sm:text-xl text-gray-700 mb-8 leading-relaxed max-w-3xl mx-auto">
-            Access licensed therapists, trained peers, and focused communities in one streamlined experience.
-            Progress tools, not noise. Start where you are—build momentum week by week.
+            Award-winning innovation recognized by the Facebook Accelerator Program for its impact and scalability.<br />
+            Your mental wellness journey starts here — download Boma now.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button size="lg" className="bg-teal-600 hover:bg-teal-700 text-white px-8 py-4 text-lg">
+            <Button size="lg" className="bg-[#244C93] hover:bg-[#1d3d78] text-white px-8 py-4 text-lg">
               <Download className="h-5 w-5 mr-2" />
-              Download App
+              Download on App Store
             </Button>
-            <Button variant="outline" size="lg" className="px-8 py-4 text-lg hover:bg-teal-50">
-              <Play className="h-5 w-5 mr-2" />
-              Watch Demo
+            <Button size="lg" variant="outline" className="px-8 py-4 text-lg hover:bg-[#E27A28]/10 border-[#E27A28] text-[#244C93]">
+              <Download className="h-5 w-5 mr-2 text-[#E27A28]" />
+              Get it on Google Play
             </Button>
-          </div>
-          
-          {/* App Store Badges */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <div className="bg-black text-white px-6 py-3 rounded-lg flex items-center space-x-3 hover:bg-gray-800 transition-colors cursor-pointer">
-              <div className="text-2xl">📱</div>
-              <div>
-                <div className="text-xs">Download on the</div>
-                <div className="text-lg font-semibold">App Store</div>
-              </div>
-            </div>
-            <div className="bg-black text-white px-6 py-3 rounded-lg flex items-center space-x-3 hover:bg-gray-800 transition-colors cursor-pointer">
-              <div className="text-2xl">🤖</div>
-              <div>
-                <div className="text-xs">Get it on</div>
-                <div className="text-lg font-semibold">Google Play</div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* Stats Section (swap accent color) */}
+      {/* Stats Section */}
       <section className="bg-white py-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -146,163 +162,93 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Improved Comprehensive Support / Features Section */}
+      {/* Features Overview */}
       <section id="features" className="relative">
         <div className="absolute inset-0 -z-10 bg-gradient-to-b from-white via-[#244C93]/5 to-white" />
         <div className="container mx-auto px-4 py-24">
           <div className="mx-auto mb-14 max-w-3xl text-center">
             <h2 className="text-4xl font-bold tracking-tight text-[#244C93]">
-              Comprehensive Mental Health Support
+              Practical mental health support that fits real life
             </h2>
             <p className="mt-4 text-lg text-slate-700">
-              A layered support model: professional guidance, peer relatability, structured communities, and data you own.
+              Your safe space, all in one app! Connect with licensed therapists, Rafikis, and vibrant topic-based communities built just for you.
             </p>
           </div>
-
-            {/* Intro + Key Value Card */}
-          <div className="mb-14 grid gap-10 lg:grid-cols-3">
-            <Card className="lg:col-span-1 border-[#244C93]/15 shadow-sm bg-white/90 backdrop-blur">
-              <CardHeader>
-                <CardTitle className="text-xl text-[#244C93] flex items-center gap-2">
-                  <BarChart2 className="h-5 w-5 text-[#E27A28]" />
-                  Why this model works
-                </CardTitle>
-                <CardDescription className="text-slate-600">
-                  Single‑channel approaches underperform. Boma stitches structured professional care with organic peer momentum and measurable micro‑progression.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="text-sm leading-relaxed text-slate-600 space-y-3">
-                <p><span className="font-medium text-[#244C93]">Retention:</span> Layered interaction types reduce drop‑off after week 3.</p>
-                <p><span className="font-medium text-[#244C93]">Signal:</span> Progress telemetry highlights when to escalate support.</p>
-                <p><span className="font-medium text-[#244C93]">Boundaries:</span> Role distinction prevents emotional overload.</p>
-              </CardContent>
-            </Card>
-
-            <div className="lg:col-span-2 grid gap-6 sm:grid-cols-2">
-              {features.slice(0,4).map(f => {
-                const Icon = f.icon;
-                return (
-                  <Card key={f.title} className="group border border-[#244C93]/10 shadow-sm hover:shadow-md transition bg-white/95">
-                    <CardHeader className="pb-3">
-                      <div className="flex items-start gap-3">
-                        <div className="relative">
-                          <div className="h-11 w-11 rounded-xl bg-gradient-to-br from-[#244C93] to-[#1d3d78] flex items-center justify-center">
-                            <Icon className="h-5 w-5 text-white" />
-                          </div>
-                          <span className="absolute -bottom-1 -right-1 h-4 w-4 rounded-full bg-[#E27A28] ring-2 ring-white" />
-                        </div>
-                        <div>
-                          <CardTitle className="text-base font-semibold text-[#244C93]">
-                            {f.title}
-                          </CardTitle>
-                          <p className="text-xs uppercase tracking-wide text-[#E27A28] font-medium mt-0.5">
-                            {f.blurb}
-                          </p>
-                        </div>
-                      </div>
-                    </CardHeader>
-                    <CardContent className="text-sm text-slate-600 leading-relaxed">
-                      {f.detail}
-                    </CardContent>
-                  </Card>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Secondary Feature Grid */}
-          <div className="grid gap-6 md:grid-cols-3">
-            {features.slice(4).map(f => {
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {features.map((f, i) => {
               const Icon = f.icon;
               return (
-                <Card key={f.title} className="border border-[#244C93]/10 bg-white/90 hover:border-[#244C93]/30 transition">
-                  <CardHeader className="pb-2">
-                    <div className="flex items-center gap-3">
-                      <div className="h-9 w-9 rounded-lg bg-[#E27A28]/90 flex items-center justify-center">
+                <Card key={f.title} className="group border border-[#244C93]/10 shadow-sm hover:shadow-md transition bg-white/95">
+                  <CardHeader className="pb-3">
+                    <div className="flex items-start gap-3">
+                      <div className="h-11 w-11 rounded-xl bg-gradient-to-br from-[#244C93] to-[#1d3d78] flex items-center justify-center">
                         <Icon className="h-5 w-5 text-white" />
                       </div>
-                      <CardTitle className="text-base font-semibold text-[#244C93]">
-                        {f.title}
-                      </CardTitle>
+                      <div>
+                        <CardTitle className="text-base font-semibold text-[#244C93]">
+                          {f.title}
+                        </CardTitle>
+                        <p className="text-xs uppercase tracking-wide text-[#E27A28] font-medium mt-0.5">
+                          {f.blurb}
+                        </p>
+                      </div>
                     </div>
                   </CardHeader>
                   <CardContent className="text-sm text-slate-600 leading-relaxed">
-                    <p className="font-medium text-slate-700">{f.blurb}</p>
-                    <p className="mt-2">{f.detail}</p>
+                    {f.detail}
                   </CardContent>
                 </Card>
               );
             })}
-            <Card className="relative overflow-hidden border-0 shadow-lg md:col-span-3 bg-gradient-to-r from-[#244C93] via-[#1d3d78] to-[#244C93]">
-              <>
-                <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_30%_40%,#E27A28_0%,transparent_60%)]" />
-                <CardHeader>
-                  <CardTitle className="text-white flex items-center gap-2">
-                    Layered support, owned progress
-                  </CardTitle>
-                  <CardDescription className="text-slate-200">
-                    You control what’s shared. Data portability is built‑in; exports don’t require a support ticket.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="text-sm text-slate-100 flex flex-wrap gap-x-6 gap-y-3">
-                  {['Role clarity', 'Escalation signals', 'Adaptive prompts', 'Opt‑in metrics', 'Structured privacy', 'Open export'].map(tag => (
-                    <span key={tag} className="rounded-full bg-white/10 px-3 py-1 text-xs tracking-wide uppercase">
-                      {tag}
-                    </span>
-                  ))}
-                </CardContent>
-              </>
-            </Card>
           </div>
         </div>
       </section>
 
-      {/* Additional Features (previous cards unified to brand palette) */}
-      {/* ...removed old gradient blocks; optional if still needed keep above section instead... */}
+      {/* Why Boma */}
+      <section className="bg-[#244C93]/5 py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center mb-10">
+            <h2 className="text-3xl font-bold text-[#244C93] mb-4">Why Boma?</h2>
+            <p className="text-lg text-slate-700">The perfect blend of professional expertise and peer support you can relate to.</p>
+          </div>
+          <div className="grid gap-8 md:grid-cols-2">
+            {whyBoma.map((item) => (
+              <div key={item.title} className="rounded-lg bg-white border border-[#244C93]/10 p-6 shadow-sm">
+                <h3 className="text-lg font-semibold text-[#244C93] mb-2">{item.title}</h3>
+                <p className="text-slate-700">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-      {/* How It Works (color tweaks) */}
+      {/* How It Works */}
       <section className="bg-white py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">How Boma Works</h2>
-            <p className="text-xl text-gray-600">Simple steps to start your mental health journey</p>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">How It Works</h2>
+            <p className="text-xl text-gray-600">Take the first step to better mental health</p>
           </div>
-          
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-[#244C93]/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl font-bold text-[#244C93]">1</span>
+            {howItWorks.map((step) => (
+              <div key={step.step} className="text-center">
+                <div className="w-16 h-16 bg-[#244C93]/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <span className="text-2xl font-bold text-[#244C93]">{step.step}</span>
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">{step.title}</h3>
+                <p className="text-gray-600">{step.desc}</p>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Download & Sign Up</h3>
-              <p className="text-gray-600">Create your account and complete a brief assessment to help us understand your needs.</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-[#244C93]/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl font-bold text-[#244C93]">2</span>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Get Matched</h3>
-              <p className="text-gray-600">We'll connect you with the right therapist, Rafiki, or community based on your preferences.</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-[#244C93]/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl font-bold text-[#244C93]">3</span>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Start Healing</h3>
-              <p className="text-gray-600">Begin your journey with personalized support, community connection, and daily inspiration.</p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Testimonials (accent color adjust) */}
+      {/* Testimonials */}
       <section id="testimonials" className="container mx-auto px-4 py-20">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">What Our Users Say</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">Testimonials</h2>
           <p className="text-xl text-gray-600">Real stories from real people on their healing journey</p>
         </div>
-        
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
             <Card key={index} className="border-0 shadow-lg bg-white">
@@ -323,15 +269,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Download CTA (brand gradient) */}
+      {/* Download CTA */}
       <section id="download" className="bg-gradient-to-r from-[#244C93] to-[#1d3d78] text-white py-20">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-4">Ready to Start Your Journey?</h2>
-          <p className="text-xl mb-8 text-teal-100 max-w-2xl mx-auto">
-            Join thousands who have found support, healing, and growth with Boma. 
-            Download our app today and take the first step towards better mental health.
+          <h2 className="text-4xl font-bold mb-4">Connect. Heal. Grow.</h2>
+          <p className="text-xl mb-8 text-white max-w-2xl mx-auto">
+            Take the first step to better mental health - download Boma today and find your safe space.<br />
+            Join thousands already finding hope and connection through Boma.
           </p>
-          
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <Button size="lg" variant="secondary" className="bg-white text-[#244C93] hover:bg-gray-100 px-8 py-4 text-lg">
               <Download className="h-5 w-5 mr-2" />
@@ -342,19 +287,14 @@ export default function Home() {
               Download for Android
             </Button>
           </div>
-          
-          <div className="flex items-center justify-center space-x-8 text-teal-100">
-            <div className="flex items-center space-x-2">
+          <div className="flex flex-col items-center justify-center space-y-2 mt-6">
+            <div className="flex items-center space-x-2 text-white">
               <CheckCircle className="h-5 w-5" />
               <span>Free to Download</span>
             </div>
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-2 text-white">
               <CheckCircle className="h-5 w-5" />
-              <span>HIPAA Compliant</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <CheckCircle className="h-5 w-5" />
-              <span>24/7 Support</span>
+              <span>24/7 Helpline: <a href="tel:+254710360360" className="underline">+254710360360</a></span>
             </div>
           </div>
         </div>
@@ -362,26 +302,26 @@ export default function Home() {
 
       <FAQSection />
 
-      {/* Footer (swap teal accents to brand blue/orange) */}
+      {/* Footer */}
       <footer className="bg-gray-900 text-white py-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <Heart className="h-6 w-6 text-teal-400" />
+                <Heart className="h-6 w-6 text-[#E27A28]" />
                 <span className="text-xl font-bold">Boma</span>
               </div>
               <p className="text-gray-400 mb-4">
                 Supporting mental health journeys with professional care and community connection.
               </p>
               <div className="flex space-x-4">
-                <div className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-teal-600 transition-colors cursor-pointer">
+                <div className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#244C93] transition-colors cursor-pointer">
                   <span className="text-sm">f</span>
                 </div>
-                <div className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-teal-600 transition-colors cursor-pointer">
+                <div className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#244C93] transition-colors cursor-pointer">
                   <span className="text-sm">t</span>
                 </div>
-                <div className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-teal-600 transition-colors cursor-pointer">
+                <div className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#244C93] transition-colors cursor-pointer">
                   <span className="text-sm">in</span>
                 </div>
               </div>
@@ -415,7 +355,7 @@ export default function Home() {
             </div>
           </div>
           <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 mb-4 md:mb-0">&copy; 2025 Boma. All rights reserved.</p>
+            <p className="text-gray-400 mb-4 md:mb-0">&copy; {new Date().getFullYear()} Boma. All rights reserved.</p>
             <div className="flex items-center space-x-4">
               <span className="text-gray-400">Download the app:</span>
               <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white">
